@@ -4,7 +4,15 @@ AbsolumentpasTV
 Welcome to the Symfony project made by Team 17 aka Absolument Pas
 
 How to contribute to AbsolumentpasTV project
-========================
+
+Members
+--------------
+* Camille Basset - *Developer Front*
+* Léa Bandinelli - *Designer, Front-end Developer*
+* [Maxime Lussiana][14] - *Back-end Developer*
+* Théo Bacholier - *Lead Designer*
+* Arthur Chassin - *Designer*
+* [Antoine Gourtay][15] - *Lead Developer*
 
 
 Symfony README
@@ -69,3 +77,5 @@ Enjoy!
 [11]: https://symfony.com/doc/3.2/logging.html
 [12]: https://symfony.com/doc/3.2/assetic/asset_management.html
 [13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
+[14]: https://github.com/lussiana-m
+[15]: https://github.com/AntoineGourtayHetic
