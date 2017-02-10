@@ -9,7 +9,7 @@ Members
 --------------
 * Camille Basset - *Front-end Developer*
 * Léa Bandinelli - *Designer, Front-end Developer*
-* [Maxime Lussiana][14] - *Back-end Developer*
+* [Maxime Lussiana][14] - *Front-end@ Developer*
 * Théo Bacholier - *Lead Designer*
 * Arthur Chassin - *Designer*
 * [Antoine Gourtay][15] - *Lead Developer*
@@ -22,6 +22,7 @@ git clone https://github.com/AntoineGourtayHetic/absolumentpas-tv.git
 cd absolumentpas-tv-master
 
 php bin/symfony-requirements
+composer install
 php bin/console doctrine:database:create
 php bin/console doctrine:schema:update --dump-sql
 php bin/console doctrine:schema:update --force

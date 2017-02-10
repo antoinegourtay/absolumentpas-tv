@@ -80,5 +80,7 @@ fos_user:
 
 #Easy admin
 easy_admin:
+    site_name: 'AbsolumentPas TV'
     entities:
       - AppBundle\Entity\User
+      - AppBundle\Entity\Article
