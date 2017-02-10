@@ -77,3 +77,8 @@ fos_user:
     from_email:
         address: noreply@absolumentpastv.com
         sender_name: AbsolumentPasTV
+
+#Easy admin
+easy_admin:
+    entities:
+      - AppBundle\Entity\User
