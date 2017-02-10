@@ -20,9 +20,14 @@ How to install
 ```
 git clone https://github.com/AntoineGourtayHetic/absolumentpas-tv.git
 cd absolumentpas-tv-master
+
+php bin/symfony-requirements
+php bin/console doctrine:database:create
+php bin/console doctrine:schema:update --dump-sql
+php bin/console doctrine:schema:update --force
+
 ``` 
 
-What's inside ?
 --------------
 
 ###Bundles
