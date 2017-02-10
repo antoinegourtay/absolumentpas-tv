@@ -25,7 +25,6 @@ php bin/symfony-requirements
 php bin/console doctrine:database:create
 php bin/console doctrine:schema:update --dump-sql
 php bin/console doctrine:schema:update --force
-
 ``` 
 
 --------------
