@@ -82,5 +82,30 @@ fos_user:
 easy_admin:
     site_name: 'AbsolumentPas TV'
     entities:
-      - AppBundle\Entity\User
-      - AppBundle\Entity\Article
+      User:
+        class: AppBundle\Entity\User
+        form:
+          fields:
+            - username
+            - email
+            - enabled
+            - lastLogin
+            # if administrators are allowed to edit users' passwords and roles, add this:
+            - { property: 'plainPassword', type: 'text', type_options: { required: false } }
+            - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } }
+        edit:
+          fields:
+            - { property: 'plainPassword', type_options: { required: false} }
+          form_options: { validation_groups: ['Profile'] }
+
+        new:
+          fields:
+            - { property: 'plainPassword', type_options: { required: true} }
+          form_options: { validation_groups: ['Registration'] }
+      Article:
+        class: AppBundle\Entity\Article
+    design:
+      menu:
+        - { label: 'Dashboard', default: true}
+        - User
+        - Article
