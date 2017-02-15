@@ -102,10 +102,8 @@ easy_admin:
           fields:
             - { property: 'plainPassword', type_options: { required: true} }
           form_options: { validation_groups: ['Registration'] }
-      Article:
-        class: AppBundle\Entity\Article
+      
     design:
       menu:
         - { label: 'Dashboard', default: true}
         - User
-        - Article
