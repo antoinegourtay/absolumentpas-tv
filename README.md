@@ -9,7 +9,7 @@ Members
 --------------
 * [Camille Basset][17] - *Front-end Developer*
 * [Léa Bandinelli][16] - *Designer, Front-end Developer*
-* [Maxime Lussiana][14] - *Front-end@ Developer*
+* [Maxime Lussiana][14] - *Front-end & Developer*
 * [Théo Bacholier][18] - *Lead Designer*
 * [Arthur Chassin][19] - *Designer*
 * [Antoine Gourtay][15] - *Lead Developer*

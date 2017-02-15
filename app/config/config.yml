@@ -102,7 +102,7 @@ easy_admin:
           fields:
             - { property: 'plainPassword', type_options: { required: true} }
           form_options: { validation_groups: ['Registration'] }
-      
+
     design:
       menu:
         - { label: 'Dashboard', default: true}
