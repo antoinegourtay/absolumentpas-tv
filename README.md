@@ -7,11 +7,11 @@ How to contribute to AbsolumentpasTV project
 
 Members
 --------------
-* Camille Basset - *Front-end Developer*
-* Léa Bandinelli - *Designer, Front-end Developer*
+* [Camille Basset][17] - *Front-end Developer*
+* [Léa Bandinelli][16] - *Designer, Front-end Developer*
 * [Maxime Lussiana][14] - *Front-end@ Developer*
-* Théo Bacholier - *Lead Designer*
-* Arthur Chassin - *Designer*
+* [Théo Bacholier][18] - *Lead Designer*
+* [Arthur Chassin][19] - *Designer*
 * [Antoine Gourtay][15] - *Lead Developer*
 
 How to install
@@ -36,3 +36,7 @@ php bin/console doctrine:schema:update --force
 
 [14]: https://github.com/lussiana-m
 [15]: https://github.com/AntoineGourtayHetic
+[16]: https://github.com/leabandinelli
+[17]: https://github.com/camillebasset
+[18]: https://github.com/qrek
+[19]: https://github.com/zachariass
