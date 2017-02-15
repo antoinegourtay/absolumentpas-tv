@@ -107,6 +107,5 @@ easy_admin:
 
     design:
       menu:
-        - { label: 'Dashboard', default: true}
         - User
 
