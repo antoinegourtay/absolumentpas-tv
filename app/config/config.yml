@@ -105,7 +105,32 @@ easy_admin:
             - { property: 'plainPassword', type_options: { required: true} }
           form_options: { validation_groups: ['Registration'] }
 
+      Actuality:
+        class: AppBundle\Entity\Actuality
+        form:
+          fields:
+           - titleNews
+           - subtitleNews
+           - imageNews
+           - contentNews
+           - authorNews #TODO: Changing the fields that they can automatically be set
+           - dateNews #TODO: Changing the fields that they can automatically be set
+
+           - rankNews
+
+      Programme:
+        class: AppBundle\Entity\Programme
+        form:
+          fields:
+            - titleProgram
+            - numberSeason
+            - dateProgram
+            - imageProgram #TODO: Search for type of column to update an image
+            - descriptionProgram
+
     design:
       menu:
+        - Actuality
+        - Programme
         - User
 
