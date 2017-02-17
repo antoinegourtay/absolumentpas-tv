@@ -129,6 +129,7 @@ easy_admin:
             - descriptionProgram
 
     design:
+    #TODO: Add here the lines needed to input new CSS file
       menu:
         - Actuality
         - Programme
