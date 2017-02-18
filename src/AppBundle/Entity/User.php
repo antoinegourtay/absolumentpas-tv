@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
@@ -27,23 +28,24 @@ class User extends BaseUser implements UserInterface
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(name="email_user", type="string", length=255, unique=true)
      * @Assert\NotBlank()
      * @Assert\Email()
      */
-    private $email;
+    protected $emailUser;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(name="username_user",type="string", length=255, unique=true)
      * @Assert\NotBlank()
      */
-    private $username;
+    protected $usernameUser;
 
     /**
+     * @ORM\Column(name="plain_password_user",type="string", length=255)
      * @Assert\NotBlank()
      * @Assert\Length(max=4096)
      */
-    private $plainPassword;
+    protected $plainPasswordUser;
 
     /**
      * The below length depends on the "algorithm" you use for encoding
@@ -51,23 +53,7 @@ class User extends BaseUser implements UserInterface
      *
      * @ORM\Column(type="string", length=64)
      */
-    private $password;
-
-    /**
-     * @return string
-     */
-    public function getConfirmationToken()
-    {
-        return $this->confirmationToken;
-    }
-
-    /**
-     * @param string $confirmationToken
-     */
-    public function setConfirmationToken($confirmationToken)
-    {
-        $this->confirmationToken = $confirmationToken;
-    }
+    protected $passwordUser;
 
     /**
      * @return mixed
@@ -102,23 +88,6 @@ class User extends BaseUser implements UserInterface
     }
 
     /**
-     * @return \DateTime
-     */
-    public function getLastLogin()
-    {
-        return $this->lastLogin;
-    }
-
-    /**
-     * @param \DateTime $lastLogin
-     * @return $this|\FOS\UserBundle\Model\UserInterface|void
-     */
-    public function setLastLogin($lastLogin)
-    {
-        $this->lastLogin = $lastLogin;
-    }
-
-    /**
      * @return mixed
      */
     public function getPassword()
@@ -150,23 +119,6 @@ class User extends BaseUser implements UserInterface
     public function setPlainPassword($plainPassword)
     {
         $this->plainPassword = $plainPassword;
-    }
-
-    /**
-     * @return array
-     */
-    public function getRoles()
-    {
-        return $this->roles;
-    }
-
-    /**
-     * @param array $roles
-     * @return $this|\FOS\UserBundle\Model\UserInterface|void
-     */
-    public function setRoles($roles)
-    {
-        $this->roles = $roles;
     }
 
     /**
