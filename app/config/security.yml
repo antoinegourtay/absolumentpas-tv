@@ -16,15 +16,22 @@ security:
             id: fos_user.user_provider.username
 
     firewalls:
-        main:
-            pattern: ^/
-            form_login:
-              login_path: login
-              check_path: login
+        dev:
+          pattern: ^/(_(profiler|wdt)|css|images|js)/
+          security: false
 
-            logout:       true
-            anonymous:    true
-
-    access_control:
-      - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-      - { path: ^/, roles: ROLE_ADMIN }
+        default:
+          anonymous: ~
+#    firewalls:
+#        main:
+#            pattern: ^/
+#            form_login:
+#              login_path: login
+#              check_path: login
+#
+#            logout:       true
+#            anonymous:    true
+#
+#    access_control:
+#      - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#      - { path: ^/, roles: ROLE_ADMIN }
