@@ -10,7 +10,7 @@ class ProgrammeController extends Controller
     /**
      * @Route("/programme")
      */
-    public function indexAction()
+    public function programmeAction()
     {
         $em = $this->getDoctrine()->getManager();
 

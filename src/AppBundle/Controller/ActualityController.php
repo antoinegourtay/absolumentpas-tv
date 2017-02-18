@@ -8,9 +8,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class ActualityController extends Controller
 {
     /**
-     * @Route("/index")
+     * @Route("/", name="homepage")
      */
-    public function indexAction()
+    public function actualityAction()
     {
         $em = $this->getDoctrine()->getManager();
         $actualities = $em->getRepository('AppBundle:Actuality')->findAll();
