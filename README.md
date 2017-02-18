@@ -3,8 +3,6 @@ AbsolumentpasTV
 
 Welcome to the Symfony project made by Team 17 aka Absolument Pas
 
-How to contribute to AbsolumentpasTV project
-
 Members
 --------------
 * [Camille Basset][17] - *Front-end Developer*
@@ -30,9 +28,10 @@ php bin/console doctrine:schema:update --force
 
 --------------
 
-###Bundles
+###Bundles used
 
 *FOSUserBunble* - User gestion
+*EasyAdminBundle* - Content administration
 
 [14]: https://github.com/lussiana-m
 [15]: https://github.com/AntoineGourtayHetic

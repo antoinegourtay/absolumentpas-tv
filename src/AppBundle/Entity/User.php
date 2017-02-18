@@ -135,7 +135,7 @@ class User extends BaseUser implements UserInterface
         $this->passwordUser = $passwordUser;
     }
 
-    
+
 
 
 
