@@ -58,17 +58,17 @@ class User extends BaseUser implements UserInterface
     /**
      * @return mixed
      */
-    public function getEmail()
+    public function getEmailUser()
     {
-        return $this->email;
+        return $this->emailUser;
     }
 
     /**
-     * @param mixed $email
+     * @param mixed $emailUser
      */
-    public function setEmail($email)
+    public function setEmailUser($emailUser)
     {
-        $this->email = $email;
+        $this->emailUser = $emailUser;
     }
 
     /**
@@ -90,53 +90,52 @@ class User extends BaseUser implements UserInterface
     /**
      * @return mixed
      */
-    public function getPassword()
+    public function getUsernameUser()
     {
-        return $this->password;
+        return $this->usernameUser;
     }
 
     /**
-     * @param mixed $password
-     * @return $this|\FOS\UserBundle\Model\UserInterface|void
+     * @param mixed $usernameUser
      */
-    public function setPassword($password)
+    public function setUsernameUser($usernameUser)
     {
-        $this->password = $password;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPlainPassword()
-    {
-        return $this->plainPassword;
-    }
-
-    /**
-     * @param mixed $plainPassword
-     * @return $this|\FOS\UserBundle\Model\UserInterface|void
-     */
-    public function setPlainPassword($plainPassword)
-    {
-        $this->plainPassword = $plainPassword;
+        $this->usernameUser = $usernameUser;
     }
 
     /**
      * @return mixed
      */
-    public function getUsername()
+    public function getPlainPasswordUser()
     {
-        return $this->username;
+        return $this->plainPasswordUser;
     }
 
     /**
-     * @param mixed $username
-     * @return $this|\FOS\UserBundle\Model\UserInterface|void
+     * @param mixed $plainPasswordUser
      */
-    public function setUsername($username)
+    public function setPlainPasswordUser($plainPasswordUser)
     {
-        $this->username = $username;
+        $this->plainPasswordUser = $plainPasswordUser;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPasswordUser()
+    {
+        return $this->passwordUser;
+    }
+
+    /**
+     * @param mixed $passwordUser
+     */
+    public function setPasswordUser($passwordUser)
+    {
+        $this->passwordUser = $passwordUser;
+    }
+
+    
 
 
 
