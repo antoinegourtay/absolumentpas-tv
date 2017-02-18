@@ -24,3 +24,7 @@ security:
 
             logout:       true
             anonymous:    true
+
+    access_control:
+      - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/, roles: ROLE_ADMIN }
