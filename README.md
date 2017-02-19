@@ -30,6 +30,7 @@ php bin/console doctrine:schema:update --force
 
 ###Bundles used
 
+*FOSRestBundle* - API Rest
 *FOSUserBunble* - User gestion
 *EasyAdminBundle* - Content administration
 
