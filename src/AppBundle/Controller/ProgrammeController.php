@@ -8,45 +8,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use AppBundle\Entity\Programme;
+use Symfony\Component\Routing\Annotation\Route;
 
 class ProgrammeController extends Controller
 {
-    /**
-     * @Rest\View()
-     * @Rest\Get("/programmes")
-     */
-
-    public function getProgrammesAction(Request $request)
-    {
-        $programmes = $this->get('doctrine.orm.entity_manager')
-                        ->getRepository('AppBundle:Programme')
-                        ->findAll();
-        /* @var $programmes Programme[] */
-
-        return $programmes;
-    }
 
     /**
-     * @Rest\View()
-     * @Rest\Get("/programmes/{id}")
+     * @Route('/programme')
      */
-
-    public function getProgrammeAction(Request $request)
-    {
-        $programme = $this->get('doctrine.orm.entity_manager')
-                    ->getRepository('AppBundle:Programme')
-                    ->find($request->get('program_id'));
-        /* @var $programme Programme */
-
-        if (empty($programme)) {
-            return new JsonResponse(['message' => 'Programme not found'], Response::HTTP_NOT_FOUND);
-        }
-
-        return $programme;
-    }
-
-
-
     public function programmeAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -59,5 +28,39 @@ class ProgrammeController extends Controller
             'programmes' => $programmes,
         ));
     }
+
+//    /**
+//     * @Rest\View()
+//     * @Rest\Get("/programmes")
+//     */
+//
+//    public function getProgrammesAction(Request $request)
+//    {
+//        $programmes = $this->get('doctrine.orm.entity_manager')
+//                        ->getRepository('AppBundle:Programme')
+//                        ->findAll();
+//        /* @var $programmes Programme[] */
+//
+//        return $programmes;
+//    }
+//
+//    /**
+//     * @Rest\View()
+//     * @Rest\Get("/programmes/{id}")
+//     */
+//
+//    public function getProgrammeAction(Request $request)
+//    {
+//        $programme = $this->get('doctrine.orm.entity_manager')
+//                    ->getRepository('AppBundle:Programme')
+//                    ->find($request->get('program_id'));
+//        /* @var $programme Programme */
+//
+//        if (empty($programme)) {
+//            return new JsonResponse(['message' => 'Programme not found'], Response::HTTP_NOT_FOUND);
+//        }
+//
+//        return $programme;
+//    }
 
 }
