@@ -7,9 +7,10 @@ security:
             AppBundle\Entity\User: bcrypt
 
     role_hierarchy:
+        ROLE_AUTHOR:      ROLE_AUTHOR
+        ROLE_MODERATOR:   ROLE_MODERATOR
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
-        ROLE_MODERATOR:   ROLE_MODERATOR
 
     providers:
         fos_userbundle:
