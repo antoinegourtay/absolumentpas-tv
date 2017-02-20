@@ -3,12 +3,16 @@
 namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use FOS\RestBundle\Controller\Annotations\Get;
+use AppBundle\Entity\Actuality;
 
 class ActualityController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Get("/", name="homepage")
      */
     public function actualityAction()
     {
