@@ -13,7 +13,3 @@ easy_admin_bundle:
 user_registration:
     path:     /register
     defaults: { _controller: AppBundle:Registration:register }
-
-programmes:
-    type:     rest
-    resource: AppBundle\Controller\ProgrammeController

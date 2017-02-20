@@ -80,14 +80,6 @@ fos_user:
         address: noreply@absolumentpastv.com
         sender_name: AbsolumentPasTV
 
-fos_rest:
-    routing_loader:
-        include_format: false
-    view:
-        view_response_listener: true
-    format_listener:
-            rules:
-                - { path: '^/', priorities: ['json'], fallback_format: 'json' }
 
 #Easy admin
 easy_admin:

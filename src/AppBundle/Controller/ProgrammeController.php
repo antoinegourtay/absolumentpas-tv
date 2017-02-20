@@ -14,7 +14,7 @@ class ProgrammeController extends Controller
 {
 
     /**
-     * @Route('/programme')
+     * @Route("/programme", name="page_programme")
      */
     public function programmeAction()
     {
@@ -29,38 +29,6 @@ class ProgrammeController extends Controller
         ));
     }
 
-//    /**
-//     * @Rest\View()
-//     * @Rest\Get("/programmes")
-//     */
-//
-//    public function getProgrammesAction(Request $request)
-//    {
-//        $programmes = $this->get('doctrine.orm.entity_manager')
-//                        ->getRepository('AppBundle:Programme')
-//                        ->findAll();
-//        /* @var $programmes Programme[] */
-//
-//        return $programmes;
-//    }
-//
-//    /**
-//     * @Rest\View()
-//     * @Rest\Get("/programmes/{id}")
-//     */
-//
-//    public function getProgrammeAction(Request $request)
-//    {
-//        $programme = $this->get('doctrine.orm.entity_manager')
-//                    ->getRepository('AppBundle:Programme')
-//                    ->find($request->get('program_id'));
-//        /* @var $programme Programme */
-//
-//        if (empty($programme)) {
-//            return new JsonResponse(['message' => 'Programme not found'], Response::HTTP_NOT_FOUND);
-//        }
-//
-//        return $programme;
-//    }
+
 
 }
