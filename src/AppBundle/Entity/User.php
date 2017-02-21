@@ -59,9 +59,8 @@ class User extends BaseUser implements UserInterface
     protected $passwordUser;
 
     /**
-     * @ORM\Column(name="role_user", type="integer")
-     * @ORM\ManyToOne(targetEntity="UserType", inversedBy="roles")
-     * @ORM\JoinColumn(name="id_user_role", referencedColumnName="id")
+     * @ManyToOne(targetEntity="UserType")
+     * @JoinColumn(name="role_id", referencedColumnName="id")
      */
     protected $roleUser;
 

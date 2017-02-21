@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -21,9 +22,14 @@ class UserType
     protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="User", mappedBy="roleUser")
+     * @ORM\Column(name="role_user", type="string", length=100)
      */
     private $roles;
+
+    public function __construct()
+    {
+        $this->roles = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -41,7 +47,13 @@ class UserType
         $this->roles = $roles;
     }
 
-
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
 }
 
