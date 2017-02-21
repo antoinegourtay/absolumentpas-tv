@@ -81,65 +81,58 @@ fos_user:
         sender_name: AbsolumentPasTV
 
 
-#Easy admin
-easy_admin:
-    site_name: 'AbsolumentPas TV'
-    entities:
-      User:
-        class: AppBundle\Entity\User
-        form:
-          fields:
-            - emailUser
-            - usernameUser
-            - plainPasswordUser
-            - passwordUser
-            # if administrators are allowed to edit users' passwords and roles, add this:
-            - { property: 'plainPassword', type: 'text', type_options: { required: false } }
-            - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN', 'ROLE_AUTHOR': 'ROLE_AUTHOR' } } }
-        edit:
-          fields:
-            - { property: 'plainPassword', type_options: { required: false} }
-          form_options: { validation_groups: ['Profile'] }
-
-        new:
-          fields:
-            - { property: 'plainPassword', type_options: { required: true} }
-          form_options: { validation_groups: ['Registration'] }
-
-      Actuality:
-        class: AppBundle\Entity\Actuality
-        form:
-          fields:
-           - titleNews
-           - subtitleNews
-           - imageNews
-           - contentNews
-           - authorNews #TODO: Changing the fields that they can automatically be set
-           - dateNews #TODO: Changing the fields that they can automatically be set
-
-           - rankNews
-
-      Programme:
-        class: AppBundle\Entity\Programme
-        form:
-          fields:
-            - titleProgram
-            - numberSeason
-            - dateProgram
-            - imageProgram #TODO: Search for type of column to update an image
-            - descriptionProgram
-
-    design:
-    #TODO: Add here the lines needed to input new CSS file
-      menu:
-        - Actuality
-        - Programme
-        - User
-
-
 sonata_block:
     default_contexts: [cms]
     blocks:
-        # enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
-            contexts: [admin]
+            contexts:   [admin]
+
+sonata_doctrine_orm_admin:
+    # default value is null, so doctrine uses the value defined in the configuration
+    entity_manager: ~
+
+    audit:
+        force: true
+
+    templates:
+        form:
+            - SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig
+        filter:
+            - SonataDoctrineORMAdminBundle:Form:filter_admin_fields.html.twig
+        types:
+            list:
+                array:      SonataAdminBundle:CRUD:list_array.html.twig
+                boolean:    SonataAdminBundle:CRUD:list_boolean.html.twig
+                date:       SonataAdminBundle:CRUD:list_date.html.twig
+                time:       SonataAdminBundle:CRUD:list_time.html.twig
+                datetime:   SonataAdminBundle:CRUD:list_datetime.html.twig
+                text:       SonataAdminBundle:CRUD:base_list_field.html.twig
+                trans:      SonataAdminBundle:CRUD:list_trans.html.twig
+                string:     SonataAdminBundle:CRUD:base_list_field.html.twig
+                smallint:   SonataAdminBundle:CRUD:base_list_field.html.twig
+                bigint:     SonataAdminBundle:CRUD:base_list_field.html.twig
+                integer:    SonataAdminBundle:CRUD:base_list_field.html.twig
+                decimal:    SonataAdminBundle:CRUD:base_list_field.html.twig
+                identifier: SonataAdminBundle:CRUD:base_list_field.html.twig
+                currency:   SonataAdminBundle:CRUD:list_currency.html.twig
+                percent:    SonataAdminBundle:CRUD:list_percent.html.twig
+                choice:     SonataAdminBundle:CRUD:list_choice.html.twig
+                url:        SonataAdminBundle:CRUD:list_url.html.twig
+
+            show:
+                array:      SonataAdminBundle:CRUD:show_array.html.twig
+                boolean:    SonataAdminBundle:CRUD:show_boolean.html.twig
+                date:       SonataAdminBundle:CRUD:show_date.html.twig
+                time:       SonataAdminBundle:CRUD:show_time.html.twig
+                datetime:   SonataAdminBundle:CRUD:show_datetime.html.twig
+                text:       SonataAdminBundle:CRUD:base_show_field.html.twig
+                trans:      SonataAdminBundle:CRUD:show_trans.html.twig
+                string:     SonataAdminBundle:CRUD:base_show_field.html.twig
+                smallint:   SonataAdminBundle:CRUD:base_show_field.html.twig
+                bigint:     SonataAdminBundle:CRUD:base_show_field.html.twig
+                integer:    SonataAdminBundle:CRUD:base_show_field.html.twig
+                decimal:    SonataAdminBundle:CRUD:base_show_field.html.twig
+                currency:   SonataAdminBundle:CRUD:base_currency.html.twig
+                percent:    SonataAdminBundle:CRUD:base_percent.html.twig
+                choice:     SonataAdminBundle:CRUD:show_choice.html.twig
+                url:        SonataAdminBundle:CRUD:show_url.html.twig
