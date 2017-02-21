@@ -29,11 +29,12 @@
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "javiereguiluz/easyadmin-bundle": "^1.16",
         "discutea/forum-bundle": "^1.0",
-        "friendsofsymfony/rest-bundle": "^2.1"
+        "friendsofsymfony/rest-bundle": "^2.1",
+        "sonata-project/admin-bundle": "dev-master"
 
     },
     "require-dev": {
-        "sensio/generator-bundle": "^3.0",
+        "sensio/generator-bundle": "3.1.2",
         "symfony/phpunit-bridge": "^3.0"
     },
     "scripts": {
