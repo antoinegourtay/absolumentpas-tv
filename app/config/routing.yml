@@ -17,3 +17,4 @@ user_registration:
 programmes:
     type:     rest
     resource: AppBundle\Controller\ProgrammeController
+    prefix: /api

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use FOS\RestBundle\Controller\Annotations\Get;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -46,7 +47,10 @@ class ProgrammeController extends Controller
     }
 
 
-
+    /**
+     *
+     * @Get("/programme")
+     */
     public function programmeAction()
     {
         $em = $this->getDoctrine()->getManager();
