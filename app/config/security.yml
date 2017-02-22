@@ -9,8 +9,8 @@ security:
     role_hierarchy:
         ROLE_AUTHOR:      ROLE_AUTHOR
         ROLE_MODERATOR:   ROLE_MODERATOR
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: ROLE_ADMIN
+        ROLE_ADMIN:       ROLE_ADMIN
+        ROLE_SUPER_ADMIN: ROLE_ADMIN_ADMIN
 
     providers:
         fos_userbundle:
@@ -23,16 +23,15 @@ security:
 
         default:
           anonymous: ~
-#    firewalls:
-#        main:
-#            pattern: ^/
-#            form_login:
-#              login_path: login
-#              check_path: login
-#
-#            logout:       true
-#            anonymous:    true
-#
-#    access_control:
-#      - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-#      - { path: ^/, roles: ROLE_ADMIN }
+    firewalls:
+        main:
+            pattern: ^/
+            form_login:
+              login_path: login
+              check_path: login
+
+            logout:       true
+            anonymous:    true
+
+    access_control:
+      - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
