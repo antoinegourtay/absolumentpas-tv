@@ -7,6 +7,7 @@ body {
 
 .header {
   width: 100%;
+  background-color: #F7F7F8;
 }
 .header_logo {
   display: block;
@@ -41,7 +42,7 @@ body {
     width: 1130px;
     height: 80px;
     /*background-color: #fff;*/
-    background-color: rgba(48, 217, 151, 0.7);
+    background-color: rgba(48, 217, 151, 0.3);
     border: solid 1px #9B9B9B;
     margin: auto;
     text-align: center;
@@ -225,7 +226,7 @@ ul {
   border: solid 1px #9B9B9B;
 }
 .news_container_middle_title {
-  margin: 15px 10px 15px 18px;
+  margin: 15px 0 15px 18px;
   font-size: 19px;
   text-transform: uppercase;
   font-weight: 700;
