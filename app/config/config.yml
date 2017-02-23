@@ -33,6 +33,8 @@ framework:
     assets: ~
     php_errors:
         log: true
+    templating:
+            engines: ['twig']
 
 # Twig Configuration
 twig:
@@ -89,6 +91,13 @@ fos_rest:
             rules:
 
                 - { path: '^/', priorities: ['html'], fallback_format: 'html' }
+
+nelmio_api_doc:
+    name:                 'App API documentation'
+    sandbox:
+        body_format:
+            formats: [form, json, xml]
+            default_format: json
 
 easy_admin:
     site_name: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/2000px-Cartoon_Network_2010_logo.svg.png" />'
