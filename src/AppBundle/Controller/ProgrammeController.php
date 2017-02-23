@@ -70,24 +70,5 @@ class ProgrammeController extends Controller
         ));
     }
 
-    /**
-     * Finds and displays a studentType entity.
-     *
-     * @Route("/programme/{id}", name="programme_show")
-     *
-     */
-    public function showAction(Actuality $actuality)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $programmes = $em->getRepository('AppBundle:Programme')->findAll();
-        $personnages = $em->getRepository('AppBundle:Personnage')->findAll();
-
-        return $this->render('programmes/show.html.twig', array(
-            'actuality' => $actuality,
-            'programmes' => $programmes,
-            'personnages' => $personnages,
-
-        ));
-    }
 
 }
