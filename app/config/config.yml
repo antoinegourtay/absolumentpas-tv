@@ -144,6 +144,7 @@ easy_admin:
             - name
             - serie
             - rank
+            - image
 
     design:
       brand_color: '#30D997'

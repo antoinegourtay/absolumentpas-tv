@@ -87,6 +87,12 @@ src="https://www.youtube.com/embed/XlEOlEgtd24">
           </div>
           <div class="news_container_right_currently">
             <h3 class="news_container_right_currently_title">SUPERS PERSONNAGES</h3>
+            {% for personnage in personnages %}
+              <div class="news_container_right_perso">
+                <h3 class="news_container_right_persoName">{{personnage.name}}</h3>
+                <img class="news_container_right_persoImg" src="{{personnage.image}}" alt="">
+              </div>
+            {% endfor %}
           </div>
 
           <div class="news_container_right_socialnetworks">
