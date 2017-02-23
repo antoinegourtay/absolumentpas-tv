@@ -2,6 +2,9 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\OneToOne;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -54,6 +57,12 @@ class User extends BaseUser implements UserInterface
      * @ORM\Column(type="string", length=64)
      */
     protected $passwordUser;
+
+    /**
+     * @ManyToOne(targetEntity="UserType")
+     * @JoinColumn(name="role_id", referencedColumnName="id")
+     */
+    protected $roleUser;
 
     /**
      * @return mixed
@@ -135,8 +144,21 @@ class User extends BaseUser implements UserInterface
         $this->passwordUser = $passwordUser;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getRoleUser()
+    {
+        return $this->roleUser;
+    }
 
-
+    /**
+     * @param mixed $roleUser
+     */
+    public function setRoleUser($roleUser)
+    {
+        $this->roleUser = $roleUser;
+    }
 
 
 }

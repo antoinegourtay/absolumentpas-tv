@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\OneToOne;
 
 /**
  * Actuality
@@ -53,6 +55,8 @@ class Actuality
      * @var int
      *
      * @ORM\Column(name="author_news", type="integer")
+     * @OneToOne(targetEntity="User")
+     * @JoinColumn(name="shipping_id", referencedColumnName="id")
      */
     private $authorNews;
 

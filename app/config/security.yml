@@ -9,9 +9,9 @@ security:
               algorithm: plaintext
 
     role_hierarchy:
-        ROLE_USER:       ROLE_USER
-        ROLE_SUPER_ADMIN: ROLE_ADMIN
         ROLE_MODERATOR:   ROLE_MODERATOR
+        ROLE_ADMIN:       ROLE_ADMIN
+        ROLE_SUPER_ADMIN: ROLE_ADMIN_ADMIN
 
     providers:
       in_memory:
@@ -25,6 +25,7 @@ security:
           id: fos_user.user_provider.username
 
     firewalls:
+
         main:
             pattern: ^/
             form_login:

@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use AppBundle\Entity\Programme;
 use Symfony\Component\Routing\Annotation\Route;
+
 use Nelmio\ApiDocBundle\Annotation as Doc;
 
 class ProgrammeController extends Controller
@@ -39,8 +40,8 @@ class ProgrammeController extends Controller
     public function getProgrammeAction(Request $request)
     {
         $programme = $this->get('doctrine.orm.entity_manager')
-                    ->getRepository('AppBundle:Programme')
-                    ->find($request->get('program_id'));
+            ->getRepository('AppBundle:Programme')
+            ->find($request->get('program_id'));
         /* @var $programme Programme */
 
         if (empty($programme)) {
@@ -50,10 +51,8 @@ class ProgrammeController extends Controller
         return $programme;
     }
 
-
     /**
-     *
-     * @Get("/programme")
+     * @Route("/programme", name="page_programme")
      */
     public function programmeAction()
     {
@@ -69,6 +68,5 @@ class ProgrammeController extends Controller
             'personnages' => $personnages,
         ));
     }
-
 
 }

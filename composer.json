@@ -30,12 +30,18 @@
         "javiereguiluz/easyadmin-bundle": "^1.16",
         "discutea/forum-bundle": "^1.0",
         "friendsofsymfony/rest-bundle": "^2.1",
+
         "nelmio/api-doc-bundle": "^2.13",
         "jms/serializer-bundle": "^1.2"
 
+        "sonata-project/admin-bundle": "^3.1",
+        "sonata-project/doctrine-orm-admin-bundle": "dev-master"
+
+
+
     },
     "require-dev": {
-        "sensio/generator-bundle": "^3.0",
+        "sensio/generator-bundle": "3.1.2",
         "symfony/phpunit-bridge": "^3.0"
     },
     "scripts": {
@@ -56,7 +62,7 @@
     },
     "config": {
         "platform": {
-            "php": "5.5.9"
+            "php": "7.0"
         }
     },
     "extra": {
