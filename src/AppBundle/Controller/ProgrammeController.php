@@ -2,13 +2,16 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Actuality;
 use FOS\RestBundle\Controller\Annotations\Get;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use AppBundle\Entity\Programme;
+use Symfony\Component\Routing\Annotation\Route;
 
 class ProgrammeController extends Controller
 {
@@ -57,10 +60,32 @@ class ProgrammeController extends Controller
 
         $programmes = $em->getRepository('AppBundle:Programme')->findAll();
         $actualities = $em->getRepository('AppBundle:Actuality')->findAll();
+        $personnages = $em->getRepository('AppBundle:Personnage')->findAll();
 
         return $this->render('AppBundle:Programme:index.html.twig', array(
             'actualities' => $actualities,
             'programmes' => $programmes,
+            'personnages' => $personnages,
+        ));
+    }
+
+    /**
+     * Finds and displays a studentType entity.
+     *
+     * @Route("/programme/{id}", name="programme_show")
+     *
+     */
+    public function showAction(Actuality $actuality)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $programmes = $em->getRepository('AppBundle:Programme')->findAll();
+        $personnages = $em->getRepository('AppBundle:Personnage')->findAll();
+
+        return $this->render('programmes/show.html.twig', array(
+            'actuality' => $actuality,
+            'programmes' => $programmes,
+            'personnages' => $personnages,
+
         ));
     }
 

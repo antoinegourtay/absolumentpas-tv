@@ -55,7 +55,7 @@
         </div> -->
 
         {% for actuality in actualities|slice(0, 2) %}
-            <a href="#">
+            <a href="actuality/{{ actuality.id }}">
             <div class="news_container_left_recent">
                 <img class="news_container_left_recent_img" src="{{actuality.imageNews}}" alt="">
                 <div class="news_container_left_recent_info">
