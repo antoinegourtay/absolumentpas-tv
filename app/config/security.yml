@@ -24,25 +24,17 @@ security:
       fos_userbundle:
           id: fos_user.user_provider.username
 
-#    firewalls:
-#        dev:
-#          pattern: ^/(_(profiler|wdt)|css|images|js)/
-#          security: false
-#
+    firewalls:
+        main:
+            pattern: ^/
+            form_login:
+              login_path: login
+              check_path: login
 
-#        default:
-#          anonymous: ~
-#    firewalls:
-#        main:
-#            pattern: ^/
-#            form_login:
-#              login_path: login
-#              check_path: login
-#
-#            logout:       true
-#            anonymous:    true
-#
-#    access_control:
-#      - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-##      - { path: ^/admin, roles: ROLE_ADMIN }
+            logout:       true
+            anonymous:    true
+
+    access_control:
+      - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/admin, roles: ROLE_ADMIN }
 
