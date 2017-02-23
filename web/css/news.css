@@ -188,7 +188,7 @@ ul {
   border: solid 1px #9B9B9B;
 }
 .news_container_middle_title {
-  margin: 15px 0 0 18px;
+  margin: 15px 0 15px 18px;
   font-size: 19px;
   text-transform: uppercase;
   font-weight: 700;
@@ -199,7 +199,7 @@ ul {
 */
 
 .news_container_right {
-  height: 500px;
+  height: auto;
   padding: 0;
 }
 

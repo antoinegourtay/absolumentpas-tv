@@ -3,5 +3,155 @@
 {% block title %}AppBundle:Programme:index{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Programme:index page</h1>
+
+<div class="header">
+    <img class="header_logo" src="{{ asset('img/Cartoon_Network_logo.png') }}" alt="">
+    <nav class="navbar navbar-inverse">
+        <ul class="nav navbar-nav">
+          <li><a href="#">ACTUALITÉS</a></li>
+          <li><a href="#">PROGRAMME</a></li>
+          <li><a href="#">FORUM</a></li>
+        </ul>
+        <!-- <p class="navbar-text">Some text</p> -->
+    </nav>
+  </div>
+
+
+  <div class="news_searchbar">
+    <div class="news_searchbar_elements">
+      <input type="text" class="news_searchbar_elements_form" placeholder="Rechercher">
+
+      <button class="news_searchbar_elements_button" type="submit">
+          <div class="news_searchbar_elements_icon">
+            <img src="img/search.png" alt="">
+          </div>
+      </button>
+
+    </div>
+  </div>
+  <div class="news_add">
+    <img src="img/add_batman.png" alt="Concours Lego Batman">
+  </div>
+  <div class="news_container row">
+      <div class="news_container_left col-sm-3">
+        <div class="news_container_left_nav">
+            <ul class="news_container_left_navbar">
+              <li><a href="#">Actualité</a></li>
+              <li><a href="#">Programme</a></li>
+              <li><a href="#">Forum</a></li>
+            </ul>
+        </div>
+
+        <div class="news_container_left_recent">
+            <img class="news_container_left_recent_img" src="img/newsrecent.png" alt="">
+            <div class="news_container_left_recent_info">
+              <h3 class="news_container_left_recent_title">What Curling Irons
+  Are The Best Ones</h3>
+              <p class="news_container_left_recent_text">What Curling Irons
+  Are The Best Ones What Curling Irons</p>
+            </div>
+        </div>
+
+        <div class="news_container_left_old">
+            <img class="news_container_left_old_img" src="img/newsold.png" alt="">
+            <h3 class="news_container_left_old_title">Vinyl Banners With Its Different Types Kinds And Applications</h3>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+      	   <p class="retour_program">< Retour</p>
+
+          <div class="news_container_emission">
+             <h2 class="news_container_middle_title">Garfield</h2>
+             <h2 class="news_container_middle_title">Saison 9</h2>
+             <img class="news_container_img_program" src="img/garfield.png" alt="">
+             <p class="news_container_middle_text">Harry, le chat de gouttière et ami de Garfield, tente d'attraper un oiseau pour en faire son repas...sans succès. Garfield se souvient peu après du bon vieux temps quand il chassait les oiseaux. Il décide alors de chasser un oiseau, en vain. Malheureusement, ce même oiseau (qui était la mère de trois œufs) est resté coincé dans un garage en essayant de manger un ver de terre. Garfield repère alors un nid et grimpe dans un arbre pour attendre la mère oiseau. Le problème, c'est que ça prenait des heures pour attendre cet oiseau. Peu après, Garfield regarde alors un documentaire sur les oiseaux et apprend, apeuré, que si la mère ne s'occupe pas de ses œufs, ils seront perdus...Le lendemain, Garfield dormait dans le même arbre qu'hier et pendant la nuit, les œufs ont éclos et prennent Garfield pour leur maman...</p>
+             <p class="news_container_diffusion">Diffusion à partir du <i><b>8 février à 10h10 et 12h20.</b></i></p>
+             <div class="news_container_favorite">
+             	<p class="news_container_text_favorite"><b>Ajouter aux favoris cette série</b></p>
+             	<img class="news_container_img_favorite" src="img/like.png" alt="">
+             </div>
+          </div>
+
+           <div class="news_container_discover">
+             <h2 class="news_container_middle_title">Découvrez également</h2>
+             <div class="news_container_middle_discover">
+             	<div class="news_container_discover_bloc">
+             		<img class="news_container_img_discover" src="img/pokemon.jpg" alt="">
+             		<div class="news_container_discover_blocText">
+             			<h3 class="news_container_discover_text text1">Pokemon</h3>
+             			<h3 class="news_container_discover_text text2">Saison 9</h3>
+             		</div>
+             	</div>
+             	<div class="news_container_discover_bloc">
+             		<img class="news_container_img_discover" src="img/pokemon.jpg" alt="">
+             		<div class="news_container_discover_blocText">
+             			<h3 class="news_container_discover_text text1">Pokemon</h3>
+             			<h3 class="news_container_discover_text text2">Saison 9</h3>
+             		</div>
+             	</div>
+             </div>
+           </div>
+
+           <div class="news_container_actuality">
+			 <h2 class="news_container_middle_title">Les dernières actualités</h2>
+			 <div class="news_container_container_actuality">
+			 	<div class="news_container_bloc_actuality left-actuality">
+			 		<h3 class="news_container_title_actuality">Impact Of Extrinsi Motivate On Intrinsic Motivation</h3>
+			 		<div class="news_container_bloc_actuality">
+			 			<img class="news_container_img_actuality" src="img/time.png" alt="">
+			 			<p class="news_container_text_actuality">12 janvier 2017 - 15:30</p>
+			 		</div>
+			 	</div>
+			 	<div class="news_container_bloc_actuality right-actuality">
+			 		<h3 class="news_container_title_actuality">A Great Way To Generate All The Motivation You Need To</h3>
+			 		<div>
+			 			<img class="news_container_img_actuality" src="img/time.png" alt="">
+			 			<p class="news_container_text_actuality">12 janvier 2017 - 15:30</p>
+			 		</div>
+			 	</div>
+			 	<div class="news_container_bloc_actuality left-actuality">
+			 		<h3 class="news_container_title_actuality">Learn To Face Difficulty even if you're a cunt</h3>
+			 		<div>
+			 			<img class="news_container_img_actuality" src="img/time.png" alt="">
+			 			<p class="news_container_text_actuality">12 janvier 2017 - 15:30</p>
+			 		</div>
+			 	</div>
+			 	<div class="news_container_bloc_actuality right-actuality">
+			 		<h3 class="news_container_title_actuality">Helen Keller A Teller And A Seller</h3>
+			 		<div>
+			 			<img class="news_container_img_actuality" src="img/time.png" alt="">
+			 			<p class="news_container_text_actuality">12 janvier 2017 - 15:30</p>
+			 		</div>
+			 	</div
+			 </div>
+           </div>
+      </div>
+      </div>
+
+      <div class="news_container_right col-sm-3">
+          <div class="news_container_right_live">
+              <h3 class="news_container_right_live_title">LIVE TV</h3>
+              <div class="news_container_right_live_video">
+              </div>
+          </div>
+          <div class="news_container_right_currently">
+            <h3 class="news_container_right_currently_title">ACTUALITÉS DU MOMENT</h3>
+          </div>
+
+          <div class="news_container_right_socialnetworks">
+                <p class="news_container_right_socialnetwork-name twitter">Twitter</p>
+                <p class="news_container_right_socialnetwork-name facebook">Facebook</p>
+                <p class="news_container_right_socialnetwork-name youtube">Youtube</p>
+          </div>
+          <div class="news_container_right_add">
+              <img class="news_container_right_add_img" src="img/add_mighty.png" alt="Concours Lego Batman">
+          </div>
+          <div class="news_container_right_tvshow">
+            <h3 class="news_container_right_tvshow_title">SÉRIES DU MOMENT</h3>
+          </div>
+          <div class="news_container_right_searchbar"></div>
+      </div>
+  </div>
+
 {% endblock %}
