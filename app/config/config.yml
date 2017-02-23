@@ -91,8 +91,12 @@ fos_rest:
                 - { path: '^/', priorities: ['html'], fallback_format: 'html' }
 
 easy_admin:
-    site_name: 'ACME Megacorp.'
+    site_name: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/2000px-Cartoon_Network_2010_logo.svg.png" />'
     entities:
       - AppBundle\Entity\Actuality
       - AppBundle\Entity\Programme
       - AppBundle\Entity\User
+    design:
+      brand_color: '#30D997'
+      color_scheme: 'light'
+
