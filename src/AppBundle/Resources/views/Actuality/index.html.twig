@@ -39,7 +39,6 @@
             <ul class="news_container_left_navbar">
               <li><a href="#">Actualité</a></li>
               <li><a href="#">Programme</a></li>
-              <li><a href="#">Forum</a></li>
             </ul>
         </div>
 
@@ -48,25 +47,41 @@
             <h3 class="news_container_left_recent_title"></h3>
             <p class="news_container_left_recent_text"></p>
         </div> -->
-        <div class="news_container_left_recent">
-            <img class="news_container_left_recent_img" src="img/newsrecent.png" alt="">
-            <div class="news_container_left_recent_info">
-              <h3 class="news_container_left_recent_title">What Curling Irons
-  Are The Best Ones</h3>
-              <p class="news_container_left_recent_text">What Curling Irons
-  Are The Best Ones What Curling Irons</p>
+        <div class="news_container_left_recent1">
+            <img class="news_container_left_recent_img1" src="img/titans.png" alt="">
+            <div class="news_container_left_recent_info1">
+              <h3 class="news_container_left_recent_title1">Titans!</h3>
+              <p class="news_container_left_recent_text1">Wouhou</p>
             </div>
         </div>
+
+        {% for actuality in actualities|slice(0, 2) %}
+
+            <div class="news_container_left_recent">
+                <img class="news_container_left_recent_img" src="{{actuality.imageNews}}" alt="">
+                <div class="news_container_left_recent_info">
+                  <h3 class="news_container_left_recent_title">{{actuality.titleNews}}</h3>
+                  <p class="news_container_left_recent_text">{{actuality.subtitleNews}}</p>
+                </div>
+            </div>
+        {% endfor %}
+
+        {% for actuality in actualities|slice(2, 10) %}
+        <div class="news_container_left_old">
+            <img class="news_container_left_old_img" src="{{actuality.imageNews}}" alt="">
+            <h3 class="news_container_left_old_title">{{actuality.titleNews}}</h3>
+        </div>
+        {% endfor %}
 
 
         <!-- <div class="news_container_left_old">
             <img class="news_container_left_old_img"src="" alt="">
             <h3 class="news_container_left_old_title"></h3>
         </div> -->
-        <div class="news_container_left_old">
+        <!-- <div class="news_container_left_old">
             <img class="news_container_left_old_img" src="img/newsold.png" alt="">
             <h3 class="news_container_left_old_title">Vinyl Banners With Its Different Types Kinds And Applications</h3>
-        </div>
+        </div> -->
       </div>
 
       <div class="col-sm-6">
@@ -87,8 +102,11 @@
       <div class="news_container_right col-sm-3">
           <div class="news_container_right_live">
               <h3 class="news_container_right_live_title">LIVE TV</h3>
-              <div class="news_container_right_live_video">
-              </div>
+
+                <iframe class="news_container_right_live_video" width="260"
+src="https://www.youtube.com/embed/XlEOlEgtd24">
+</iframe>
+
           </div>
           <div class="news_container_right_currently">
             <h3 class="news_container_right_currently_title">ACTUALITÉS DU MOMENT</h3>
