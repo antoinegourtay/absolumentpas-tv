@@ -29,26 +29,4 @@ class ActualityController extends Controller
         ));
     }
 
-    /**
-     * Finds and displays a studentType entity.
-     *
-     * @Route("/actuality/{id}", name="actuality_show")
-     *
-     */
-    public function showAction(Actuality $actuality)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $programmes = $em->getRepository('AppBundle:Programme')->findAll();
-        $personnages = $em->getRepository('AppBundle:Personnage')->findAll();
-        $actualities = $em->getRepository('AppBundle:Actuality')->findAll();
-
-        return $this->render('actuality/show.html.twig', array(
-            'actuality' => $actuality,
-            'actualities' =>$actualities,
-            'programmes' => $programmes,
-            'personnages' => $personnages,
-
-        ));
-    }
-
 }
