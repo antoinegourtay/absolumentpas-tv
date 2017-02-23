@@ -18,3 +18,8 @@ programmes:
     type:     rest
     resource: AppBundle\Controller\ProgrammeController
     prefix: /api
+
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc

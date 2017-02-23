@@ -17,7 +17,7 @@ class ProgrammeController extends Controller
 {
     /**
      * @Rest\View()
-     * @Rest\Get("/programmes")
+     * @Rest\Get("programmes")
      */
 
     public function getProgrammesAction(Request $request)
@@ -32,7 +32,7 @@ class ProgrammeController extends Controller
 
     /**
      * @Rest\View()
-     * @Rest\Get("/programmes/{id}")
+     * @Rest\Get("programmes/{id}")
      */
 
     public function getProgrammeAction(Request $request)
