@@ -225,11 +225,7 @@ ul {
   border: solid 1px #9B9B9B;
 }
 .news_container_middle_title {
-<<<<<<< Updated upstream
-  margin: 15px 0 15px 18px;
-=======
   margin: 15px 10px 15px 18px;
->>>>>>> Stashed changes
   font-size: 19px;
   text-transform: uppercase;
   font-weight: 700;
