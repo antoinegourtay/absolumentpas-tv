@@ -12,12 +12,13 @@ use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use AppBundle\Entity\Programme;
 use Symfony\Component\Routing\Annotation\Route;
+use Nelmio\ApiDocBundle\Annotation as Doc;
 
 class ProgrammeController extends Controller
 {
     /**
      * @Rest\View()
-     * @Rest\Get("programmes")
+     * @Rest\Get("api/programmes")
      */
 
     public function getProgrammesAction(Request $request)
@@ -32,7 +33,7 @@ class ProgrammeController extends Controller
 
     /**
      * @Rest\View()
-     * @Rest\Get("programmes/{id}")
+     * @Rest\Get("api/programmes/{id}")
      */
 
     public function getProgrammeAction(Request $request)
