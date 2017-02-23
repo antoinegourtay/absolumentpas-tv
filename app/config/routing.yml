@@ -2,14 +2,22 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
-_sonata_admin:
-    resource: "@"
-    type: sonata_admin
-    prefix: /admin
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
-user_registration:
-    path:     /register
-    defaults: { _controller: AppBundle:Registration:register }
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+programmes:
+    type:     rest
+    resource: AppBundle\Controller\ProgrammeController
+    prefix: /api
+
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
+

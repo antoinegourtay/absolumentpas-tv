@@ -3,5 +3,90 @@
 {% block title %}AppBundle:Programme:index{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Programme:index page</h1>
+
+<div class="header">
+    <a href="../"><img class="header_logo" src="{{ asset('img/Cartoon_Network_logo.png') }}" alt=""></a>
+    <a href="login" class="button_login"> CONNEXION </a></li>
+    <nav class="navbar navbar-inverse">
+        <ul class="nav navbar-nav">
+          <li><a href="../">ACTUALITÉS</a></li>
+          <li><a href="#">PROGRAMME</a></li>
+        </ul>
+    </nav>
+  </div>
+
+  <div class="news_add">
+    <a href="http://www.cartoonnetwork.fr/promotion/concours-lego-batman"><img src="img/add_batman.png" alt="Concours Lego Batman"></a>
+
+  </div>
+  <div class="news_container row">
+      <a href="../">
+          <div class="news_container_left col-sm-3 col-xs-3">
+            <h2 class="news_container_middle_title">DERNIÈRES ACTUALITÉS</h2>
+
+
+            {% for actuality in actualities|slice(0, 2) %}
+
+                <div class="news_container_left_recent">
+                    <img class="news_container_left_recent_img" src="{{actuality.imageNews}}" alt="">
+                    <div class="news_container_left_recent_info">
+                      <h3 class="news_container_left_recent_title">{{actuality.titleNews}}</h3>
+                      <p class="news_container_left_recent_text">{{actuality.subtitleNews}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% for actuality in actualities|slice(2, 10) %}
+            <div class="news_container_left_old">
+                <img class="news_container_left_old_img" src="{{actuality.imageNews}}" alt="">
+                <h3 class="news_container_left_old_title">{{actuality.titleNews}}</h3>
+            </div>
+            {% endfor %}
+          </div>
+      </a>
+
+
+      <div class="col-sm-6">
+           {% for programme in programmes %}
+              <div class="news_container_emission">
+                 <h2 class="news_container_middle_title">{{programme.titleProgram}}</h2>
+                 <h2 class="news_container_middle_title">Saison {{programme.numberSeason}}</h2>
+                 <img class="news_container_img_program" src="{{programme.imageProgram}}" alt="">
+                 <p class="news_container_middle_text">{{programme.descriptionProgram}}</p>
+              </div>
+            {% endfor %}
+
+      </div>
+
+      <div class="news_container_right col-sm-3">
+        <div class="news_container_right_live">
+            <h3 class="news_container_right_live_title">LIVE TV</h3>
+
+              <iframe class="news_container_right_live_video" width="260"
+src="https://www.youtube.com/embed/XlEOlEgtd24">
+</iframe>
+
+        </div>
+        <div class="news_container_right_currently">
+          <h3 class="news_container_right_currently_title">SUPERS PERSONNAGES</h3>
+          {% for personnage in personnages %}
+            <div class="news_container_right_perso">
+              <h3 class="news_container_right_persoName">{{personnage.name}}</h3>
+              <img class="news_container_right_persoImg" src="{{personnage.image}}" alt="">
+            </div>
+          {% endfor %}
+        </div>
+
+          <div class="news_container_right_socialnetworks">
+            <a href="https://twitter.com/CN_France"><p class="news_container_right_socialnetwork-name news_container_right_socialnetwork-name-twitter">Twitter</p></a>
+            <a href="https://www.facebook.com/CartoonNetworkFr/"><p class="news_container_right_socialnetwork-name news_container_right_socialnetwork-name-facebook">Facebook</p></a>
+            <a href="https://www.youtube.com/user/cartoonnetworkFR"><p class="news_container_right_socialnetwork-name news_container_right_socialnetwork-name-youtube">Youtube</p></a>
+          </div>
+          <div class="news_container_right_add">
+            <a href="http://mightymagiswords.cartoonnetwork.fr/"><img class="news_container_right_add_img" src="img/add_mighty.png" alt="Concours Lego Batman"></a>
+          </div>
+          <div class="news_container_right_searchbar"></div>
+      </div>
+  </div>
+
 {% endblock %}

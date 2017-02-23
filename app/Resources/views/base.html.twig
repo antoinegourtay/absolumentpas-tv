@@ -2,9 +2,14 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Cartoon Network{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/news.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/program.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/login.css') }}">
     </head>
     <body>
         {% block body %}{% endblock %}

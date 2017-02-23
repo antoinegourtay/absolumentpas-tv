@@ -33,6 +33,8 @@ framework:
     assets: ~
     php_errors:
         log: true
+    templating:
+            engines: ['twig']
 
 # Twig Configuration
 twig:
@@ -80,12 +82,55 @@ fos_user:
         address: noreply@absolumentpastv.com
         sender_name: AbsolumentPasTV
 
+<<<<<<< HEAD
+fos_rest:
+    routing_loader:
+        include_format: false
+    view:
+        view_response_listener: true
+    format_listener:
+            rules:
+                - { path: '^/api', priorities: ['json'], fallback_format: json, prefer_extension: false }
+                - { path: '^/', priorities: ['html'], fallback_format: 'html' }
+
+nelmio_api_doc:
+    name:                 'App API documentation'
+    sandbox:
+        body_format:
+            formats: [form, json, xml]
+            default_format: json
+
+easy_admin:
+    site_name: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/2000px-Cartoon_Network_2010_logo.svg.png" />'
+    entities:
+      User:
+        class: AppBundle\Entity\User
+        form:
+          fields:
+            - username
+            - email
+            - enabled
+            - lastLogin
+            # if administrators are allowed to edit users' passwords and roles, add this:
+            - { property: 'plainPassword', type: 'text', type_options: { required: false } }
+            - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } }
+        edit:
+          fields:
+            - { property: 'plainPassword', type_options: { required: false} }
+          form_options: { validation_groups: ['Profile'] }
+
+        new:
+          fields:
+            - { property: 'plainPassword', type_options: { required: true} }
+          form_options: { validation_groups: ['Registration'] }
+=======
 
 sonata_block:
     default_contexts: [cms]
     blocks:
         sonata.admin.block.admin_list:
             contexts:   [admin]
+>>>>>>> master
 
 sonata_doctrine_orm_admin:
     # default value is null, so doctrine uses the value defined in the configuration
@@ -96,6 +141,27 @@ sonata_doctrine_orm_admin:
 
     templates:
         form:
+<<<<<<< HEAD
+          fields:
+            - titleProgram
+            - numberSeason
+            - dateProgram
+            - imageProgram #TODO: Search for type of column to update an image
+            - descriptionProgram
+
+      Personnage:
+        class: AppBundle\Entity\Personnage
+        form:
+          fields:
+            - name
+            - serie
+            - rank
+            - image
+
+    design:
+      brand_color: '#30D997'
+      color_scheme: 'light'
+=======
             - SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig
         filter:
             - SonataDoctrineORMAdminBundle:Form:filter_admin_fields.html.twig
@@ -136,3 +202,4 @@ sonata_doctrine_orm_admin:
                 percent:    SonataAdminBundle:CRUD:base_percent.html.twig
                 choice:     SonataAdminBundle:CRUD:show_choice.html.twig
                 url:        SonataAdminBundle:CRUD:show_url.html.twig
+>>>>>>> master
