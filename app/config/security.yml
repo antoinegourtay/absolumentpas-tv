@@ -29,18 +29,20 @@ security:
 #          pattern: ^/(_(profiler|wdt)|css|images|js)/
 #          security: false
 #
+
 #        default:
 #          anonymous: ~
-    firewalls:
-        main:
-            pattern: ^/
-            form_login:
-              login_path: login
-              check_path: login
+#    firewalls:
+#        main:
+#            pattern: ^/
+#            form_login:
+#              login_path: login
+#              check_path: login
+#
+#            logout:       true
+#            anonymous:    true
+#
+#    access_control:
+#      - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+##      - { path: ^/admin, roles: ROLE_ADMIN }
 
-            logout:       true
-            anonymous:    true
-
-    access_control:
-      - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-      - { path: ^/admin, roles: ROLE_ADMIN }
