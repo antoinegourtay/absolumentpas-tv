@@ -1,6 +1,6 @@
 body {
   background-color: #F7F7F8;
-  /*background-image: url(../img/kawai_bg.jpg);*/
+  background-image: url(../img/kawai_bg.jpg);
   margin: 0;
   font-family: 'Open Sans', sans-serif;
 }
@@ -40,7 +40,8 @@ body {
 .news_searchbar {
     width: 1130px;
     height: 80px;
-    background-color: #fff;
+    /*background-color: #fff;*/
+    background-color: rgba(48, 217, 151, 0.7);
     border: solid 1px #9B9B9B;
     margin: auto;
     text-align: center;
@@ -93,7 +94,7 @@ body {
 */
 
 .news_container_left {
-  height: 1200px;
+  height: 500px;
   border: solid 1px #9B9B9B;
   padding: 0;
   background-color: #fff;
@@ -213,16 +214,50 @@ ul {
 */
 
 .news_container_middle {
-  background-color: #fff;
   padding: 0;
-  height: 1200px;
+  height: auto;
+}
+.news_container_middle_titleBox{
+  background-color: #fff;
+  height: auto;
+  width: 100%;
+  /*padding: 20px 0 20px 0;*/
   border: solid 1px #9B9B9B;
 }
 .news_container_middle_title {
+<<<<<<< Updated upstream
   margin: 15px 0 15px 18px;
+=======
+  margin: 15px 10px 15px 18px;
+>>>>>>> Stashed changes
   font-size: 19px;
   text-transform: uppercase;
   font-weight: 700;
+}
+.news_container_middle_news{
+  background-color: #fff;
+  height: auto;
+  border: solid 1px #9B9B9B;
+  margin-top: 10px;
+
+}
+.news_container_middle_newstitle{
+  margin-left: 18px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.news_container_middle_newsimg {
+  width: 100%;
+  text-align: center;
+}
+.news_container_middle_newstext{
+  margin: 10px 10px 10px 10px;
+}
+@media screen and (max-width: 760px)
+{
+  .news_container_middle_newsimg {
+    width: 400px;
+  }
 }
 
 /*

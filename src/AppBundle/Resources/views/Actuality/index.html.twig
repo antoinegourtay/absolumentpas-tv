@@ -11,7 +11,6 @@
         <ul class="nav navbar-nav">
           <li><a href="#">ACTUALITÉS</a></li>
           <li><a href="#">PROGRAMME</a></li>
-          <li><a href="#">FORUM</a></li>
         </ul>
         <!-- <p class="navbar-text">Some text</p> -->
     </nav>
@@ -34,7 +33,7 @@
     <img src="img/add_batman.png" alt="Concours Lego Batman">
   </div>
   <div class="news_container row">
-      <div class="news_container_left col-sm-3">
+      <div class="news_container_left col-sm-3 col-xs-3">
         <div class="news_container_left_nav">
             <ul class="news_container_left_navbar">
               <li><a href="#">Actualité</a></li>
@@ -47,16 +46,16 @@
             <h3 class="news_container_left_recent_title"></h3>
             <p class="news_container_left_recent_text"></p>
         </div> -->
-        <div class="news_container_left_recent1">
+        <!-- <div class="news_container_left_recent1">
             <img class="news_container_left_recent_img1" src="img/titans.png" alt="">
             <div class="news_container_left_recent_info1">
               <h3 class="news_container_left_recent_title1">Titans!</h3>
               <p class="news_container_left_recent_text1">Wouhou</p>
             </div>
-        </div>
+        </div> -->
 
         {% for actuality in actualities|slice(0, 2) %}
-
+            <a href="#">
             <div class="news_container_left_recent">
                 <img class="news_container_left_recent_img" src="{{actuality.imageNews}}" alt="">
                 <div class="news_container_left_recent_info">
@@ -64,6 +63,7 @@
                   <p class="news_container_left_recent_text">{{actuality.subtitleNews}}</p>
                 </div>
             </div>
+            </a>
         {% endfor %}
 
         {% for actuality in actualities|slice(2, 10) %}
@@ -84,22 +84,23 @@
         </div> -->
       </div>
 
-      <div class="col-sm-6">
+      <div class="col-sm-6 col-xs-6">
           <div class="news_container_middle">
-            <h2 class="news_container_middle_title">Les dernières actualités</h2>
-
-            <div class="news_container_middle_rowLeft">
-
+            <div class="news_container_middle_titleBox">
+                <h2 class="news_container_middle_title">LES DERNIÈRES ACTUALITÉS</h2>
             </div>
 
-            <div class="news_container_middle_rowRight">
-
+            {% for actuality in actualities %}
+            <div class="news_container_middle_news">
+                <h3 class="news_container_middle_newstitle">{{actuality.titleNews}}</h3>
+                <img class="news_container_middle_newsimg" src="{{actuality.imageNews}}" alt="">
+                <p class="news_container_middle_newstext">{{actuality.contentNews}}</p>
             </div>
+            {% endfor %}
           </div>
-
       </div>
 
-      <div class="news_container_right col-sm-3">
+      <div class="news_container_right col-sm-3 col-xs-3">
           <div class="news_container_right_live">
               <h3 class="news_container_right_live_title">LIVE TV</h3>
 
@@ -109,7 +110,7 @@ src="https://www.youtube.com/embed/XlEOlEgtd24">
 
           </div>
           <div class="news_container_right_currently">
-            <h3 class="news_container_right_currently_title">ACTUALITÉS DU MOMENT</h3>
+            <h3 class="news_container_right_currently_title">SUPERS PERSONNAGES</h3>
           </div>
 
           <div class="news_container_right_socialnetworks">
