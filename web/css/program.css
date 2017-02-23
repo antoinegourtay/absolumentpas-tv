@@ -1,3 +1,14 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.button_login{
+
+    float: right;
+    margin-top: -50px;
+    margin-right: 100px;
+}
+
 /*
 ** RETOUR 
 */
