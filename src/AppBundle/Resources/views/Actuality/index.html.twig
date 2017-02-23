@@ -1,7 +1,112 @@
 {% extends "::base.html.twig" %}
 
+
 {% block title %}AppBundle:Actuality:index{% endblock %}
 
+
 {% block body %}
-<h1>Welcome to the Actuality:index page</h1>
+<div class="header">
+    <img class="header_logo" src="{{ asset('img/Cartoon_Network_logo.png') }}" alt="">
+    <nav class="navbar navbar-inverse">
+        <ul class="nav navbar-nav">
+          <li><a href="#">ACTUALITÉS</a></li>
+          <li><a href="#">PROGRAMME</a></li>
+          <li><a href="#">FORUM</a></li>
+        </ul>
+        <!-- <p class="navbar-text">Some text</p> -->
+    </nav>
+  </div>
+
+
+  <div class="news_searchbar">
+    <div class="news_searchbar_elements">
+      <input type="text" class="news_searchbar_elements_form" placeholder="Rechercher">
+
+      <button class="news_searchbar_elements_button" type="submit">
+          <div class="news_searchbar_elements_icon">
+            <img src="img/search.png" alt="">
+          </div>
+      </button>
+
+    </div>
+  </div>
+  <div class="news_add">
+    <img src="img/add_batman.png" alt="Concours Lego Batman">
+  </div>
+  <div class="news_container row">
+      <div class="news_container_left col-sm-3">
+        <div class="news_container_left_nav">
+            <ul class="news_container_left_navbar">
+              <li><a href="#">Actualité</a></li>
+              <li><a href="#">Programme</a></li>
+              <li><a href="#">Forum</a></li>
+            </ul>
+        </div>
+
+        <!-- <div class="news_container_left_recent">
+            <img class="news_container_left_recent_img" src="" alt="">
+            <h3 class="news_container_left_recent_title"></h3>
+            <p class="news_container_left_recent_text"></p>
+        </div> -->
+        <div class="news_container_left_recent">
+            <img class="news_container_left_recent_img" src="img/newsrecent.png" alt="">
+            <div class="news_container_left_recent_info">
+              <h3 class="news_container_left_recent_title">What Curling Irons
+  Are The Best Ones</h3>
+              <p class="news_container_left_recent_text">What Curling Irons
+  Are The Best Ones What Curling Irons</p>
+            </div>
+        </div>
+
+
+        <!-- <div class="news_container_left_old">
+            <img class="news_container_left_old_img"src="" alt="">
+            <h3 class="news_container_left_old_title"></h3>
+        </div> -->
+        <div class="news_container_left_old">
+            <img class="news_container_left_old_img" src="img/newsold.png" alt="">
+            <h3 class="news_container_left_old_title">Vinyl Banners With Its Different Types Kinds And Applications</h3>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+          <div class="news_container_middle">
+            <h2 class="news_container_middle_title">Les dernières actualités</h2>
+
+            <div class="news_container_middle_rowLeft">
+
+            </div>
+
+            <div class="news_container_middle_rowRight">
+
+            </div>
+          </div>
+
+      </div>
+
+      <div class="news_container_right col-sm-3">
+          <div class="news_container_right_live">
+              <h3 class="news_container_right_live_title">LIVE TV</h3>
+              <div class="news_container_right_live_video">
+              </div>
+          </div>
+          <div class="news_container_right_currently">
+            <h3 class="news_container_right_currently_title">ACTUALITÉS DU MOMENT</h3>
+          </div>
+
+          <div class="news_container_right_socialnetworks">
+                <p class="news_container_right_socialnetwork-name twitter">Twitter</p>
+                <p class="news_container_right_socialnetwork-name facebook">Facebook</p>
+                <p class="news_container_right_socialnetwork-name youtube">Youtube</p>
+          </div>
+          <div class="news_container_right_add">
+              <img class="news_container_right_add_img" src="img/add_mighty.png" alt="Concours Lego Batman">
+          </div>
+          <div class="news_container_right_tvshow">
+            <h3 class="news_container_right_tvshow_title">SÉRIES DU MOMENT</h3>
+          </div>
+          <div class="news_container_right_searchbar"></div>
+      </div>
+  </div>
+
 {% endblock %}
