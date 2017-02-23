@@ -46,7 +46,7 @@
         </div> -->
 
         {% for actuality in actualities|slice(0, 2) %}
-            <a href="actuality/{{ actuality.id }}">
+            <a href="#{{ actuality.id }}">
             <div class="news_container_left_recent">
                 <img class="news_container_left_recent_img" src="{{actuality.imageNews}}" alt="">
                 <div class="news_container_left_recent_info">
@@ -58,17 +58,19 @@
         {% endfor %}
 
         {% for actuality in actualities|slice(2, 10) %}
-        <div class="news_container_left_old">
-            <img class="news_container_left_old_img" src="{{actuality.imageNews}}" alt="">
-            <h3 class="news_container_left_old_title">{{actuality.titleNews}}</h3>
-        </div>
+            <a href="#{{ actuality.id }}">
+                <div class="news_container_left_old">
+                    <img class="news_container_left_old_img" src="{{actuality.imageNews}}" alt="">
+                    <h3 class="news_container_left_old_title">{{actuality.titleNews}}</h3>
+                </div>
+            </a>
         {% endfor %}
       </div>
 
       <div class="col-sm-6 col-xs-6">
           <div class="news_container_middle">
             {% for actuality in actualities %}
-            <div class="news_container_middle_news">
+            <div id="{{ actuality.id }}" class="news_container_middle_news">
                 <h3 class="news_container_middle_newstitle">{{actuality.titleNews}}</h3>
                 <img class="news_container_middle_newsimg" src="{{actuality.imageNews}}" alt="">
                 <p class="news_container_middle_newstext">{{actuality.contentNews}}</p>
