@@ -2,10 +2,22 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.container_login{
+
+	margin-left: 15%;
+}
 
 /*
 ** LEFT : CARTOON NETWORK
 */
+
+.block_welcome_login {
+
+	background-color: #FEFEFE;
+	padding: 10px 10px 10px 10px;
+	margin-right: 20%;
+}
+
 .title_welcome_login {
 	text-transform: uppercase;
 	font-size: 30px;
@@ -27,6 +39,13 @@ body {
 	font-weight: bold;
 }
 
+.subtitle_register {
+	
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+}
+
 
 /*
 ** RIGHT : LOGIN
@@ -36,7 +55,6 @@ body {
 }
 .no_paddingRight_login {
 	padding-right: 0px;
-	background-color: rgba(48, 217, 151, 0.701961);;
 	height: 293px;
 	margin-top: 150px;
 }
