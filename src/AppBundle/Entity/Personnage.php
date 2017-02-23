@@ -36,6 +36,13 @@ class Personnage
     private $serie;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="image_perso", type="string", length=255)
+     */
+    private $image;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="rank", type="integer")
@@ -124,5 +131,23 @@ class Personnage
     {
         return $this->rank;
     }
+
+    /**
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+
 }
 
