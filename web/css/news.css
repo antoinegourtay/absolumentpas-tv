@@ -248,6 +248,10 @@ ul {
   text-transform: uppercase;
   font-weight: 700;
 }
+.news_container_right_live_video {
+  margin-top: 10px;
+  margin-left: 10px;
+}
 
 /* ACTUALITÉS DU MOMENT */
 
