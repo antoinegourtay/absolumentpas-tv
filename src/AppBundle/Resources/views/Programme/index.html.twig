@@ -5,7 +5,7 @@
 {% block body %}
 
 <div class="header">
-    <img class="header_logo" src="{{ asset('img/Cartoon_Network_logo.png') }}" alt="">
+    <a href="../"><img class="header_logo" src="{{ asset('img/Cartoon_Network_logo.png') }}" alt=""></a>
     <a href="login" class="button_login"> CONNEXION </a></li>
     <nav class="navbar navbar-inverse">
         <ul class="nav navbar-nav">
@@ -15,52 +15,36 @@
     </nav>
   </div>
 
-
-  <div class="news_searchbar">
-    <div class="news_searchbar_elements">
-      <input type="text" class="news_searchbar_elements_form" placeholder="Rechercher">
-
-      <button class="news_searchbar_elements_button" type="submit">
-          <div class="news_searchbar_elements_icon">
-            <img src="img/search.png" alt="">
-          </div>
-      </button>
-
-    </div>
-  </div>
   <div class="news_add">
     <a href="http://www.cartoonnetwork.fr/promotion/concours-lego-batman"><img src="img/add_batman.png" alt="Concours Lego Batman"></a>
 
   </div>
   <div class="news_container row">
-      <div class="news_container_left col-sm-3 col-xs-3">
-        <h2 class="news_container_middle_title">DERNIÈRES ACTUALITÉS</h2>
+      <a href="../">
+          <div class="news_container_left col-sm-3 col-xs-3">
+            <h2 class="news_container_middle_title">DERNIÈRES ACTUALITÉS</h2>
 
-        <!-- <div class="news_container_left_nav">
-            <ul class="news_container_left_navbar">
-              <li><a href="#">Actualité</a></li>
-              <li><a href="#">Programme</a></li>
-            </ul>
-        </div> -->
 
-        {% for actuality in actualities|slice(0, 2) %}
+            {% for actuality in actualities|slice(0, 2) %}
 
-            <div class="news_container_left_recent">
-                <img class="news_container_left_recent_img" src="{{actuality.imageNews}}" alt="">
-                <div class="news_container_left_recent_info">
-                  <h3 class="news_container_left_recent_title">{{actuality.titleNews}}</h3>
-                  <p class="news_container_left_recent_text">{{actuality.subtitleNews}}</p>
+                <div class="news_container_left_recent">
+                    <img class="news_container_left_recent_img" src="{{actuality.imageNews}}" alt="">
+                    <div class="news_container_left_recent_info">
+                      <h3 class="news_container_left_recent_title">{{actuality.titleNews}}</h3>
+                      <p class="news_container_left_recent_text">{{actuality.subtitleNews}}</p>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
 
-        {% for actuality in actualities|slice(2, 10) %}
-        <div class="news_container_left_old">
-            <img class="news_container_left_old_img" src="{{actuality.imageNews}}" alt="">
-            <h3 class="news_container_left_old_title">{{actuality.titleNews}}</h3>
-        </div>
-        {% endfor %}
-      </div>
+            {% for actuality in actualities|slice(2, 10) %}
+            <div class="news_container_left_old">
+                <img class="news_container_left_old_img" src="{{actuality.imageNews}}" alt="">
+                <h3 class="news_container_left_old_title">{{actuality.titleNews}}</h3>
+            </div>
+            {% endfor %}
+          </div>
+      </a>
+
 
       <div class="col-sm-6">
            {% for programme in programmes %}
@@ -72,60 +56,6 @@
               </div>
             {% endfor %}
 
-           <div class="news_container_discover">
-             <h2 class="news_container_middle_title">Découvrez également</h2>
-             <div class="news_container_middle_discover">
-             	<div class="news_container_discover_bloc">
-             		<img class="news_container_img_discover" src="img/pokemon.jpg" alt="">
-             		<div class="news_container_discover_blocText">
-             			<h3 class="news_container_discover_text text1">Pokemon</h3>
-             			<h3 class="news_container_discover_text text2">Saison 9</h3>
-             		</div>
-             	</div>
-             	<div class="news_container_discover_bloc">
-             		<img class="news_container_img_discover" src="img/pokemon.jpg" alt="">
-             		<div class="news_container_discover_blocText">
-             			<h3 class="news_container_discover_text text1">Pokemon</h3>
-             			<h3 class="news_container_discover_text text2">Saison 9</h3>
-             		</div>
-             	</div>
-             </div>
-           </div>
-
-           <div class="news_container_actuality">
-			 <h2 class="news_container_middle_title">Les dernières actualités</h2>
-			 <div class="news_container_container_actuality">
-			 	<div class="news_container_bloc_actuality left-actuality">
-			 		<h3 class="news_container_title_actuality">Impact Of Extrinsi Motivate On Intrinsic Motivation</h3>
-			 		<div class="news_container_bloc_actuality">
-			 			<img class="news_container_img_actuality" src="img/time.png" alt="">
-			 			<p class="news_container_text_actuality">12 janvier 2017 - 15:30</p>
-			 		</div>
-			 	</div>
-			 	<div class="news_container_bloc_actuality right-actuality">
-			 		<h3 class="news_container_title_actuality">A Great Way To Generate All The Motivation You Need To</h3>
-			 		<div>
-			 			<img class="news_container_img_actuality" src="img/time.png" alt="">
-			 			<p class="news_container_text_actuality">12 janvier 2017 - 15:30</p>
-			 		</div>
-			 	</div>
-			 	<div class="news_container_bloc_actuality left-actuality">
-			 		<h3 class="news_container_title_actuality">Learn To Face Difficulty even if you're a cunt</h3>
-			 		<div>
-			 			<img class="news_container_img_actuality" src="img/time.png" alt="">
-			 			<p class="news_container_text_actuality">12 janvier 2017 - 15:30</p>
-			 		</div>
-			 	</div>
-			 	<div class="news_container_bloc_actuality right-actuality">
-			 		<h3 class="news_container_title_actuality">Helen Keller A Teller And A Seller</h3>
-			 		<div>
-			 			<img class="news_container_img_actuality" src="img/time.png" alt="">
-			 			<p class="news_container_text_actuality">12 janvier 2017 - 15:30</p>
-			 		</div>
-			 	</div
-			 </div>
-           </div>
-      </div>
       </div>
 
       <div class="news_container_right col-sm-3">
@@ -139,6 +69,12 @@ src="https://www.youtube.com/embed/XlEOlEgtd24">
         </div>
         <div class="news_container_right_currently">
           <h3 class="news_container_right_currently_title">SUPERS PERSONNAGES</h3>
+          {% for personnage in personnages %}
+            <div class="news_container_right_perso">
+              <h3 class="news_container_right_persoName">{{personnage.name}}</h3>
+              <img class="news_container_right_persoImg" src="{{personnage.image}}" alt="">
+            </div>
+          {% endfor %}
         </div>
 
           <div class="news_container_right_socialnetworks">
