@@ -65,19 +65,14 @@
       </div>
 
       <div class="col-sm-6">
-      	   <p class="retour_program">< Retour</p>
-
-          <div class="news_container_emission">
-             <h2 class="news_container_middle_title">Garfield</h2>
-             <h2 class="news_container_middle_title">Saison 9</h2>
-             <img class="news_container_img_program" src="img/garfield.png" alt="">
-             <p class="news_container_middle_text">Harry, le chat de gouttière et ami de Garfield, tente d'attraper un oiseau pour en faire son repas...sans succès. Garfield se souvient peu après du bon vieux temps quand il chassait les oiseaux. Il décide alors de chasser un oiseau, en vain. Malheureusement, ce même oiseau (qui était la mère de trois œufs) est resté coincé dans un garage en essayant de manger un ver de terre. Garfield repère alors un nid et grimpe dans un arbre pour attendre la mère oiseau. Le problème, c'est que ça prenait des heures pour attendre cet oiseau. Peu après, Garfield regarde alors un documentaire sur les oiseaux et apprend, apeuré, que si la mère ne s'occupe pas de ses œufs, ils seront perdus...Le lendemain, Garfield dormait dans le même arbre qu'hier et pendant la nuit, les œufs ont éclos et prennent Garfield pour leur maman...</p>
-             <p class="news_container_diffusion">Diffusion à partir du <i><b>8 février à 10h10 et 12h20.</b></i></p>
-             <div class="news_container_favorite">
-             	<p class="news_container_text_favorite"><b>Ajouter aux favoris cette série</b></p>
-             	<img class="news_container_img_favorite" src="img/like.png" alt="">
-             </div>
-          </div>
+           {% for programme in programmes %}
+              <div class="news_container_emission">
+                 <h2 class="news_container_middle_title">{{programme.titleProgram}}</h2>
+                 <h2 class="news_container_middle_title">Saison {{programme.numberSeason}}</h2>
+                 <img class="news_container_img_program" src="{{programme.imageProgram}}" alt="">
+                 <p class="news_container_middle_text">{{programme.descriptionProgram}}</p>
+              </div>
+            {% endfor %}
 
            <div class="news_container_discover">
              <h2 class="news_container_middle_title">Découvrez également</h2>
