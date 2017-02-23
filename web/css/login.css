@@ -73,3 +73,63 @@ body {
 	margin: 0px auto;
 	display: block;
 }
+
+
+/*
+** TABLET
+*/
+@media screen and (min-width: 540px) and (max-width: 1023px) {
+  .no_paddingRight_login {
+  	margin-top: 0px;
+  	height: 240px;
+   	width: 100%;
+  }
+  .title_welcome_login {
+  	margin: 0px auto 30px auto;
+  	font-size: 24px;
+  	padding-top: 45px;
+  }
+  .logo_login {
+  	width: 90px;
+  	margin: 0px auto 0px auto;
+  }
+  .no_paddingLeft_login {
+  	padding-right: 0px;
+  	width: 100%;
+  }
+  .block_login_login {
+    width: 100%;
+  	padding: 30px;
+  	margin-top: 0px;
+  }
+}
+
+
+/*
+** PHONE
+*/
+@media screen and (max-width: 539px) {
+  .no_paddingRight_login {
+  	margin-top: 0px;
+  	height: 240px;
+   	width: 100%;
+  }
+  .title_welcome_login {
+  	margin: 0px auto 30px auto;
+  	font-size: 24px;
+  	padding-top: 45px;
+  }
+  .logo_login {
+  	width: 90px;
+  	margin: 0px auto 0px auto;
+  }
+  .no_paddingLeft_login {
+  	padding-right: 0px;
+  	width: 100%;
+  }
+  .block_login_login {
+    width: 100%;
+  	padding: 30px;
+  	margin-top: 0px;
+  }
+}
