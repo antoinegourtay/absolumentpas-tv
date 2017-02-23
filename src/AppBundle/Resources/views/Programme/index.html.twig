@@ -8,7 +8,7 @@
     <img class="header_logo" src="{{ asset('img/Cartoon_Network_logo.png') }}" alt="">
     <nav class="navbar navbar-inverse">
         <ul class="nav navbar-nav">
-          <li><a href="#">ACTUALITÉS</a></li>
+          <li><a href="../">ACTUALITÉS</a></li>
           <li><a href="#">PROGRAMME</a></li>
         </ul>
         <!-- <p class="navbar-text">Some text</p> -->
@@ -29,31 +29,38 @@
     </div>
   </div>
   <div class="news_add">
-    <img src="img/add_batman.png" alt="Concours Lego Batman">
+    <a href="http://www.cartoonnetwork.fr/promotion/concours-lego-batman"><img src="img/add_batman.png" alt="Concours Lego Batman"></a>
+
   </div>
   <div class="news_container row">
-      <div class="news_container_left col-sm-3">
-        <div class="news_container_left_nav">
+      <div class="news_container_left col-sm-3 col-xs-3">
+        <h2 class="news_container_middle_title">DERNIÈRES ACTUALITÉS</h2>
+
+        <!-- <div class="news_container_left_nav">
             <ul class="news_container_left_navbar">
               <li><a href="#">Actualité</a></li>
               <li><a href="#">Programme</a></li>
             </ul>
-        </div>
+        </div> -->
 
-        <div class="news_container_left_recent">
-            <img class="news_container_left_recent_img" src="img/newsrecent.png" alt="">
-            <div class="news_container_left_recent_info">
-              <h3 class="news_container_left_recent_title">What Curling Irons
-  Are The Best Ones</h3>
-              <p class="news_container_left_recent_text">What Curling Irons
-  Are The Best Ones What Curling Irons</p>
+        {% for actuality in actualities|slice(0, 2) %}
+            <a href="#">
+            <div class="news_container_left_recent">
+                <img class="news_container_left_recent_img" src="{{actuality.imageNews}}" alt="">
+                <div class="news_container_left_recent_info">
+                  <h3 class="news_container_left_recent_title">{{actuality.titleNews}}</h3>
+                  <p class="news_container_left_recent_text">{{actuality.subtitleNews}}</p>
+                </div>
             </div>
-        </div>
+            </a>
+        {% endfor %}
 
+        {% for actuality in actualities|slice(2, 10) %}
         <div class="news_container_left_old">
-            <img class="news_container_left_old_img" src="img/newsold.png" alt="">
-            <h3 class="news_container_left_old_title">Vinyl Banners With Its Different Types Kinds And Applications</h3>
+            <img class="news_container_left_old_img" src="{{actuality.imageNews}}" alt="">
+            <h3 class="news_container_left_old_title">{{actuality.titleNews}}</h3>
         </div>
+        {% endfor %}
       </div>
 
       <div class="col-sm-6">
@@ -128,22 +135,25 @@
       </div>
 
       <div class="news_container_right col-sm-3">
-          <div class="news_container_right_live">
-              <h3 class="news_container_right_live_title">LIVE TV</h3>
-              <div class="news_container_right_live_video">
-              </div>
-          </div>
-          <div class="news_container_right_currently">
-            <h3 class="news_container_right_currently_title">ACTUALITÉS DU MOMENT</h3>
-          </div>
+        <div class="news_container_right_live">
+            <h3 class="news_container_right_live_title">LIVE TV</h3>
+
+              <iframe class="news_container_right_live_video" width="260"
+src="https://www.youtube.com/embed/XlEOlEgtd24">
+</iframe>
+
+        </div>
+        <div class="news_container_right_currently">
+          <h3 class="news_container_right_currently_title">SUPERS PERSONNAGES</h3>
+        </div>
 
           <div class="news_container_right_socialnetworks">
-                <p class="news_container_right_socialnetwork-name twitter">Twitter</p>
-                <p class="news_container_right_socialnetwork-name facebook">Facebook</p>
-                <p class="news_container_right_socialnetwork-name youtube">Youtube</p>
+            <a href="https://twitter.com/CN_France"><p class="news_container_right_socialnetwork-name news_container_right_socialnetwork-name-twitter">Twitter</p></a>
+            <a href="https://www.facebook.com/CartoonNetworkFr/"><p class="news_container_right_socialnetwork-name news_container_right_socialnetwork-name-facebook">Facebook</p></a>
+            <a href="https://www.youtube.com/user/cartoonnetworkFR"><p class="news_container_right_socialnetwork-name news_container_right_socialnetwork-name-youtube">Youtube</p></a>
           </div>
           <div class="news_container_right_add">
-              <img class="news_container_right_add_img" src="img/add_mighty.png" alt="Concours Lego Batman">
+            <a href="http://mightymagiswords.cartoonnetwork.fr/"><img class="news_container_right_add_img" src="img/add_mighty.png" alt="Concours Lego Batman"></a>
           </div>
           <div class="news_container_right_tvshow">
             <h3 class="news_container_right_tvshow_title">SÉRIES DU MOMENT</h3>

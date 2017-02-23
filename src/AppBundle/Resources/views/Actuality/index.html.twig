@@ -9,7 +9,7 @@
     <img class="header_logo" src="{{ asset('img/Cartoon_Network_logo.png') }}" alt="">
     <nav class="navbar navbar-inverse">
         <ul class="nav navbar-nav">
-          <li><a href="index.html.twig">ACTUALITÉS</a></li>
+          <li><a href="#">ACTUALITÉS</a></li>
           <li><a href="programme">PROGRAMME</a></li>
         </ul>
         <!-- <p class="navbar-text">Some text</p> -->
@@ -34,12 +34,15 @@
   </div>
   <div class="news_container row">
       <div class="news_container_left col-sm-3 col-xs-3">
-        <div class="news_container_left_nav">
+        <h2 class="news_container_middle_title">DERNIÈRES ACTUALITÉS</h2>
+
+
+        <!-- <div class="news_container_left_nav">
             <ul class="news_container_left_navbar">
               <li><a href="#">Actualité</a></li>
               <li><a href="#">Programme</a></li>
             </ul>
-        </div>
+        </div> -->
 
         {% for actuality in actualities|slice(0, 2) %}
             <a href="actuality/{{ actuality.id }}">
@@ -63,10 +66,6 @@
 
       <div class="col-sm-6 col-xs-6">
           <div class="news_container_middle">
-            <div class="news_container_middle_titleBox">
-                <h2 class="news_container_middle_title">LES DERNIÈRES ACTUALITÉS</h2>
-            </div>
-
             {% for actuality in actualities %}
             <div class="news_container_middle_news">
                 <h3 class="news_container_middle_newstitle">{{actuality.titleNews}}</h3>
