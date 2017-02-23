@@ -90,58 +90,9 @@ fos_rest:
 
                 - { path: '^/', priorities: ['html'], fallback_format: 'html' }
 
-#Easy admin
 easy_admin:
-    site_name: 'AbsolumentPas TV'
+    site_name: 'ACME Megacorp.'
     entities:
-      User:
-        class: AppBundle\Entity\User
-        form:
-          fields:
-            - emailUser
-            - usernameUser
-            - plainPasswordUser
-            - passwordUser
-            # if administrators are allowed to edit users' passwords and roles, add this:
-            - { property: 'plainPassword', type: 'text', type_options: { required: false } }
-            - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } }
-        edit:
-          fields:
-            - { property: 'plainPassword', type_options: { required: false} }
-          form_options: { validation_groups: ['Profile'] }
-
-        new:
-          fields:
-            - { property: 'plainPassword', type_options: { required: true} }
-          form_options: { validation_groups: ['Registration'] }
-
-      Actuality:
-        class: AppBundle\Entity\Actuality
-        form:
-          fields:
-           - titleNews
-           - subtitleNews
-           - imageNews
-           - contentNews
-           - authorNews #TODO: Changing the fields that they can automatically be set
-           - dateNews #TODO: Changing the fields that they can automatically be set
-
-           - rankNews
-
-      Programme:
-        class: AppBundle\Entity\Programme
-        form:
-          fields:
-            - titleProgram
-            - numberSeason
-            - dateProgram
-            - imageProgram #TODO: Search for type of column to update an image
-            - descriptionProgram
-
-    design:
-    #TODO: Add here the lines needed to input new CSS file
-      menu:
-        - Actuality
-        - Programme
-        - User
-
+      - AppBundle\Entity\Actuality
+      - AppBundle\Entity\Programme
+      - AppBundle\Entity\User
