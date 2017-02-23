@@ -21,34 +21,55 @@ class RegistrationController extends Controller
      */
     public function registerAction(Request $request)
     {
-        // 1) build the form
-        $user = new User();
-        $form = $this->createForm(UserType::class, $user);
-
-        // 2) handle the submit (will only happen on POST)
+//        // 1) build the form
+//        $user = new User();
+//        $form = $this->createForm(UserType::class, $user);
+//
+//        // 2) handle the submit (will only happen on POST)
+//        $form->handleRequest($request);
+//        if ($form->isSubmitted() && $form->isValid()) {
+//
+//            // 3) Encode the password (you could also do this via Doctrine listener)
+//            $password = $this->get('security.password_encoder')
+//                ->encodePassword($user, $user->getPlainPasswordUser());
+//            $user->setPasswordUser($password);
+//
+//            // 4) save the User!
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($user);
+//            $em->flush();
+//
+//            //TODO: Add a sucess message
+//            // ... do any other work - like sending them an email, etc
+//            // maybe set a "flash" success message for the user
+//
+//            return $this->redirectToRoute('homepage');
+//        }
+//
+//        return $this->render(
+//            'registration/register.html.twig',
+//            array('form' => $form->createView())
+//        );
+        $em   = $this->getDoctrine()->getManager();
+        $form = $this->createForm(new RegistrationType(), new User());
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
 
-            // 3) Encode the password (you could also do this via Doctrine listener)
-            $password = $this->get('security.password_encoder')
-                ->encodePassword($user, $user->getPlainPasswordUser());
-            $user->setPasswordUser($password);
+        $user= new User();
+        $user= $form->getData();
 
-            // 4) save the User!
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->flush();
+        $user->setCreated(new \DateTime());
+        $user->setRoles('ROLE_USER');
+        $user->setActive(true);
 
-            //TODO: Add a sucess message
-            // ... do any other work - like sending them an email, etc
-            // maybe set a "flash" success message for the user
+        $pwd=$user->getPassword();
+        $encoder=$this->container->get('security.password_encoder');
+        $pwd=$encoder->encodePassword($user, $pwd);
+        $user->setPassword($pwd);
 
-            return $this->redirectToRoute('homepage');
-        }
+        $em->persist($user);
+        $em->flush();
 
-        return $this->render(
-            'registration/register.html.twig',
-            array('form' => $form->createView())
-        );
+        $url = $this->generateUrl('admin');
+        return $this->redirect($url);
     }
 }
