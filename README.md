@@ -14,7 +14,6 @@ Members
 
 How to install
 --------------
-
 ```
 git clone https://github.com/AntoineGourtayHetic/absolumentpas-tv.git
 cd absolumentpas-tv-master
@@ -25,6 +24,8 @@ php bin/console doctrine:database:create
 php bin/console doctrine:schema:update --dump-sql
 php bin/console doctrine:schema:update --force
 ``` 
+
+And then import the DATABASE.sql file into your phpMyAdmin
 
 --------------
 
